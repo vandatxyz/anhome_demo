@@ -1,0 +1,15 @@
+{
+  "/api/revalidate/route": "app/api/revalidate/route.js",
+  "/api/public/contact/route": "app/api/public/contact/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/(public)/dich-vu/[slug]/page": "app/(public)/dich-vu/[slug]/page.js",
+  "/(public)/du-an/[slug]/page": "app/(public)/du-an/[slug]/page.js",
+  "/(public)/lien-he/page": "app/(public)/lien-he/page.js",
+  "/(public)/tin-tuc/[slug]/page": "app/(public)/tin-tuc/[slug]/page.js",
+  "/(public)/home/page": "app/(public)/home/page.js",
+  "/(public)/dich-vu/page": "app/(public)/dich-vu/page.js",
+  "/(public)/du-an/page": "app/(public)/du-an/page.js",
+  "/(public)/gioi-thieu/page": "app/(public)/gioi-thieu/page.js",
+  "/(public)/tin-tuc/page": "app/(public)/tin-tuc/page.js"
+}
