@@ -1,5 +1,3 @@
-'use client';
-
 import { Metadata } from 'next';
 import Section from '@/components/shared/Section';
 import { SectionHeader } from '@/components/shared/Section';
