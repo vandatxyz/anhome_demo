@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AnHomes.Api/AnHomes.Api.csproj" />
+    <Project Path="src/AnHomes.Application/AnHomes.Application.csproj" />
+    <Project Path="src/AnHomes.Domain/AnHomes.Domain.csproj" />
+    <Project Path="src/AnHomes.Infrastructure/AnHomes.Infrastructure.csproj" />
+  </Folder>
+</Solution>
