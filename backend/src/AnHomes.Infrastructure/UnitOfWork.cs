@@ -28,6 +28,8 @@ public class UnitOfWork : IUnitOfWork
     public IRepository<Banner> Banners => new Repository<Banner>(_context);
     public IRepository<Contact> Contacts => new Repository<Contact>(_context);
     public IRepository<SiteSetting> SiteSettings => new Repository<SiteSetting>(_context);
+ public IRepository<MediaFile> MediaFiles => new Repository<MediaFile>(_context);
+ public IRepository<SeoMetadata> SeoMetadatas => new Repository<SeoMetadata>(_context);
     public ICloudinaryService Cloudinary => _cloudinaryService;
 
     public async Task<int> SaveChangesAsync(CancellationToken ct = default)

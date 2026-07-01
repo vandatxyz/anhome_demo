@@ -1,7 +1,6 @@
 ﻿using AnHomes.Application.Dtos;
 using AnHomes.Application.Interfaces;
 using AnHomes.Domain.Entities;
-using AnHomes.Application.Interfaces;
 
 namespace AnHomes.Application.Services;
 

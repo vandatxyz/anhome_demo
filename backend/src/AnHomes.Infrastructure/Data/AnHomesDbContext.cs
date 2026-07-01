@@ -1,4 +1,4 @@
-using AnHomes.Domain.Entities;
+﻿using AnHomes.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -39,6 +39,8 @@ public class AnHomesDbContext : DbContext
         modelBuilder.ApplyConfiguration(new BannerConfiguration());
         modelBuilder.ApplyConfiguration(new ContactConfiguration());
         modelBuilder.ApplyConfiguration(new SiteSettingConfiguration());
+ modelBuilder.ApplyConfiguration(new MediaFileConfiguration());
+ modelBuilder.ApplyConfiguration(new SeoMetadataConfiguration());
     }
 }
 
@@ -216,3 +218,34 @@ file class SiteSettingConfiguration : IEntityTypeConfiguration<SiteSetting>
         builder.Property(s => s.UpdatedAt).HasDefaultValueSql("GETUTCDATE()");
     }
 }
+
+
+
+
+file class MediaFileConfiguration : IEntityTypeConfiguration<MediaFile>
+{
+ public void Configure(EntityTypeBuilder<MediaFile> builder)
+ {
+ builder.ToTable("MediaFiles");
+ builder.HasKey(m => m.Id);
+ builder.Property(m => m.Url).IsRequired();
+ builder.Property(m => m.PublicId).IsRequired();
+ builder.Property(m => m.FileName).HasMaxLength(512);
+ builder.Property(m => m.ContentType).HasMaxLength(100);
+ builder.Property(m => m.Folder).HasMaxLength(256);
+ builder.Property(m => m.CreatedAt).HasDefaultValueSql("GETUTCDATE()");
+ }
+}
+
+file class SeoMetadataConfiguration : IEntityTypeConfiguration<SeoMetadata>
+{
+ public void Configure(EntityTypeBuilder<SeoMetadata> builder)
+ {
+ builder.ToTable("SeoMetadatas");
+ builder.HasKey(s => s.Id);
+ builder.HasIndex(s => s.Page).IsUnique();
+ builder.Property(s => s.Page).IsRequired().HasMaxLength(256);
+ builder.Property(s => s.UpdatedAt).HasDefaultValueSql("GETUTCDATE()");
+ }
+}
+

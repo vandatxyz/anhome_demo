@@ -1,4 +1,4 @@
-﻿using AnHomes.Application.Interfaces;
+using AnHomes.Application.Interfaces;
 using AnHomes.Application.Services;
 using AnHomes.Domain.Entities;
 using AnHomes.Infrastructure;
@@ -33,6 +33,11 @@ builder.Services.AddScoped<IServiceService, ServiceService>();
 builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IContactService, ContactService>();
+builder.Services.AddScoped<IBannerService, BannerService>();
+builder.Services.AddScoped<IMediaService, MediaService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ISiteSettingsService, SiteSettingsService>();
+builder.Services.AddScoped<ISeoMetadataService, SeoMetadataService>();
 
 var jwtSecret = builder.Configuration["Jwt:Secret"] ?? "AnHomesSecretKey2024!@#ChangeInProduction";
 var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "AnHomes";
